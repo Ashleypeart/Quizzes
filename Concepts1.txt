@@ -1,0 +1,196 @@
+PART I
+Navigating the File System
+1.  How do you move back and forth between directories? cd
+2.  How do you create and delete files? git add, git rm
+3.  How do you create and delete directories? mkdir
+
+Git
+1.  How do you let git know you want to track changes made in a directory? git int
+2.  How do you tell git that you like the work you’ve done and want it to be a part of a chunk of work to be saved? git commit -m
+3.  How do you tell git you want to save a chunk of work? git add .
+4.  How do you tell git where to push your local changes up to a online repository? git remote, git remote add online_repo then https
+5.  How can you safely work on a different version of your current project? clone
+6.  How can you make that different version become a part of your main version? git merge
+7.  How do I move between versions of my project? cd
+8.  How can I go back to previous chunks of work that I’ve created and work from that point in time? git reset
+9.  Let’s say I wrote a bad message for a commit. How could I change it? git revert
+
+PART II
+Python
+1.  How do I run my code from the terminal? python then name.py
+2.  What can I use to reference a value later in my code? 
+    To declare a reference variable, use the following syntax: name = class 
+3.  How can I make my program display text or some value in my terminal? print("")
+4.  How can I make my code make decisions on which code to execute? if
+5.  How can I repeat blocks of code based on conditions? while loop
+6.  Why is it critical to ensure that our conditions eventually become false when repeating blocks of code? 
+    A block of code will continue to repeat until the specifiec condition is false.
+7.  What are sequences and what are the differences between them? 
+    Sequences store multiple values; lists are mutable(can be changed), tuples immutable, range, immutable sequence of numbers
+8.  How do I access a value within the various types of sequences? Index
+9.  What is an index when talking about sequences? 
+    an index is zero based, position of values in sequence
+10. What is the index of the first value within a sequence? 0
+11. How can I add or remove a value from a sequence? 
+    value:pop()
+12. What is the index of the last value within a sequence? 
+    -1
+13. How can I get the length of a sequence? 
+    len()
+14. What can I use to reference and use a block of code later in my code? 
+    create a function
+15. What is DRY? 
+    do not repeat; while loop
+16. What is Scope? Provide an example. 
+    Scope whatever is defined within the block of code.
+    You can access the value given of a name from someplace in your code.
+17. What is the difference between parameters and arguments?
+    -Parameters ()placeholder variable that tells python what to do with value
+    -Arguments tells placeholder what to be, information passed into function
+18. What is recursion? 
+    -Recursion is a concept of a function calling itself
+19. How can you return a value from a function? 
+    -Include a return statement, followed by the value to be returned
+20. Describe a dictionary. How and why would it be useful?
+    -Dictionaries are used to store data values, pairs separated by commas inside curly brackets. 
+     Dictionaries are optimized to retrieve values when the key is known.
+21. How can you remove a value from a dictionary? Use pop() method or del keyword
+22. How can you access and change values within a dictionary?
+    -Can use dict.items() to get key and value
+    print ("Dict key-value are : ")
+    for key, value in test_dict.items():
+    print (key, value)
+23. What data types can a sequence hold?
+    strings, integers, booleans, floats
+24. What data types can a dictionary hold?
+    strings, integers
+25. How can you iterate through a dictionary?
+    One of the most useful ways to iterate through a dictionary 
+    is by using .items(), which is a method that returns a new view of the dictionary’s items.
+26. What is object oriented programming? 
+    the concept of "objects", which can contain data and code: 
+    data in the form of fields, 
+    and code, in the form of procedures. 
+27. Describe a class? Why are they useful?
+    Class creates a user-defined data structure, which holds its own data members and member functions, 
+    which can be accessed and used by creating an instance of that class. 
+    A class is like a blueprint for an object. 
+    An Object is an instance of a Class. 
+    A class is like a blueprint while an instance is a copy of the class with actual values. 
+    example:
+    # Class for Dog
+    class Dog:
+   
+    # Class Variable
+    animal = 'dog'            
+   
+    # The init method or constructor
+    def __init__(self, breed, color):
+     
+        # Instance Variable    
+        self.breed = breed
+        self.color = color       
+    
+    # Objects of Dog class
+    Rodger = Dog("Pug", "brown")
+    Buzo = Dog("Bulldog", "black")
+ 
+    print('Rodger details:')  
+    print('Rodger is a', Rodger.animal)
+    print('Breed: ', Rodger.breed)
+    print('Color: ', Rodger.color)
+
+28. What are class properties? How would I give a class an initial set of properties?
+    The property() method takes the get, set and delete methods as arguments and returns 
+    an object of the property class.
+
+    class Student:
+    def __init__(self):
+        self.__name=''
+    def setname(self, name):
+        print('setname() called')
+        self.__name=name
+    def getname(self):
+        print('getname() called')
+        return self.__name
+    name=property(getname, setname)
+    
+    In the above example, property(getname, setname) 
+    returns the property object and assigns it to name. 
+    Thus, the name property hides the private instance attribute __name. 
+    The name property is accessed directly, but internally it will invoke 
+    the getname() or setname() method, as shown below.
+
+    std = Student()
+    std.name="Steve"
+    setname() called
+    std.name
+    getname() called
+    'Steve'
+
+29. What are class methods?
+    You can define as many methods as you want in a class using the def keyword. 
+    Each method must have the first parameter, generally named as self, 
+    which refers to the calling instance.
+
+    Example: 
+    class Student:
+        
+        def __init__(self, name, age): 
+            -class method-
+            self.name = name 
+            self.age = age 
+
+        def displayInfo(self): # class method
+        print('Student Name: ', self.name,', Age: ', self.age)
+        You can now invoke the method, as shown below.
+
+        Calling a Method Copy
+        std = Student('Steve', 25)
+        std.displayInfo()
+        Student Name: Steve , Age: 25 
+    
+    Self is just a conventional name for the first argument of a method in the class. 
+    A method defined as mymethod(self, a, b) should be called as x.mymethod(a, b) 
+    for the object x of the class.
+
+30. What is inheritence?
+    Inheritance comes into picture when a new class possesses 
+    the 'IS A' relationship with an existing class.
+
+    Dog IS an animal. Cat also IS an animal. 
+    Hence, animal is the base class, 
+    while dog and cat are inherited classes.
+
+    The child class inherits data definitions and methods from the parent class. 
+    This facilitates the reuse of features already available.
+
+    class parent:
+    statements
+                    
+    class child(parent):
+    statements
+
+    While defining the child class, the name of the parent class is put in the parentheses 
+    in front of it, indicating the relation between the two. 
+    Instance attributes and methods defined in the parent class will be inherited by the object 
+    of the child class.
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
